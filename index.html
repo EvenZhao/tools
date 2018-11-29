@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // _.zipObject(['a', 'b'], [1, 2]);
+        // => { 'a': 1, 'b': 2 }
+        function zipObject(arr1,arr2){
+            const obj = {};
+             for(i = 0; i<arr1.length; i++){
+                 const key = arr1[i];
+                 const value = arr2[i];
+                 obj[key] = value;
+             }
+             return obj;
+        }
+        // 去重
+        function nuiq(arr){
+            const _arr = [];
+            for(i = 0; i<arr.length; i++){
+                if(_arr.length){
+                    for(j = 0; j < _arr.length; j++){
+                        if(arr[i] === _arr[j])break;
+                    }
+                    if(j == _arr.length){
+                      _arr.push(arr[i]);
+                    }
+                }else{
+                    _arr.push(arr[i]);
+                }
+            }
+            return _arr;
+        }
+
+
+
+    </script>
+</body>
+</html>
