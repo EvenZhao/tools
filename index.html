@@ -37,8 +37,20 @@
             return _arr;
         }
 
+        //string,array,object 的foreach
 
-
+        function _each (obj, interator, context) {
+            // 如果是数组或者string
+            if (obj.constructor === Array || obj.constructor === String) {
+                for (var i = 0; i < obj.length; i++) interator.call(context, obj[i], i, obj);
+            } else if (obj.constructor === Object) {
+                for (var key in obj) {
+                    var value = obj[key];
+                    interator.call(context, value, key, obj);
+                }
+            }
+            return obj;
+        }
     </script>
 </body>
 </html>
